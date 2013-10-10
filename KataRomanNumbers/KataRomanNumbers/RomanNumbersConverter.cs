@@ -5,16 +5,20 @@ using System.Text;
 
 namespace KataRomanNumbers
 {
-    public class RomanNumbersConversos
+    public class RomanNumbersConverter
     {
         private static int[] arabicNumbers = new int[]{1,4,5,9,10,40,50,90,100};
         private static string[] romanNumbers = new string[] { "I", "IV", "V","IX","X","XL","L","XC","C" };
 
-        public string Convert(int p)
+        public object Convert(int p)
         {
             return GetRomanNumber(p);
         }
 
+        public object Convert(string p)
+        {
+            return GetArabicNumber(p);
+        }
         private static string GetRomanNumber(int arabic)
         {
             string roman = string.Empty;
@@ -33,12 +37,7 @@ namespace KataRomanNumbers
             return roman;
         }
 
-        public object Convert(string p)
-        {
-            return ConvertToArabic(p);
-        }
-
-        private object ConvertToArabic(string p)
+        private object GetArabicNumber(string p)
         {
             int arabic = 0;
             int oldIndex = int.MinValue;
@@ -57,8 +56,6 @@ namespace KataRomanNumbers
                 }
 
                 oldIndex = index;
-                
-                
             }
             
             return arabic;
