@@ -1,25 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace KataRomanNumbers
+﻿namespace KataRomanNumbers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     public class RomanNumbersConverter
     {
-        private static int[] arabicNumbers = new int[]{1,4,5,9,10,40,50,90,100};
-        private static string[] romanNumbers = new string[] { "I", "IV", "V","IX","X","XL","L","XC","C" };
+        private static int[] arabicNumbers = new int[] { 1, 4, 5, 9, 10, 40, 50, 90, 100 };
+        private static string[] romanNumbers = new string[] { "I", "IV", "V", "IX", "X", "XL", "L", "XC", "C" };
 
         public object Convert(int p)
         {
-            return GetRomanNumber(p);
+            return this.GetRomanNumber(p);
         }
 
         public object Convert(string p)
         {
-            return GetArabicNumber(p);
+            return this.GetArabicNumber(p);
         }
-        private static string GetRomanNumber(int arabic)
+
+        private string GetRomanNumber(int arabic)
         {
             string roman = string.Empty;
             int lenght = arabicNumbers.Length - 1;
@@ -42,7 +43,7 @@ namespace KataRomanNumbers
             int arabic = 0;
             int oldIndex = int.MinValue;
             int index = 0;
-            for (int i =p.Length -1; i >= 0; i--)
+            for (int i = p.Length - 1; i >= 0; i--)
             {
                 index = Array.IndexOf(romanNumbers, p[i].ToString());
 
