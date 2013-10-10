@@ -6,6 +6,7 @@ namespace KataRomanNumbers.Tests
     [TestClass]
     public class ConvertToArabicNumbersTestsFixture
     {
+        
         [TestMethod]
         public void ConverToArabic_ParameterI_Return1()
         {
