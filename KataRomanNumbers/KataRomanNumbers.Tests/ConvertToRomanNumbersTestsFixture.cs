@@ -5,7 +5,7 @@ using KataRomanNumbers;
 namespace KataRomanNumbers.Tests
 {
     [TestClass]
-    public class ConvertRomanNumbersTestsFixture
+    public class ConvertToRomanNumbersTestsFixture
     {
         [TestMethod]
         public void ConverToRoman_Parameter1_ReturnI()
@@ -80,6 +80,14 @@ namespace KataRomanNumbers.Tests
         }
 
         [TestMethod]
+        public void ConverToRoman_Parameter60_ReturnLX()
+        {
+            var conversor = new RomanNumbersConversos();
+            var romanNumber = conversor.Convert(60);
+            Assert.AreEqual("LX", romanNumber);
+        }
+
+        [TestMethod]
         public void ConverToRoman_Parameter70_ReturnLXX()
         {
             var conversor = new RomanNumbersConversos();
@@ -93,6 +101,22 @@ namespace KataRomanNumbers.Tests
             var conversor = new RomanNumbersConversos();
             var romanNumber = conversor.Convert(79);
             Assert.AreEqual("LXXIX", romanNumber);
+        }
+
+        [TestMethod]
+        public void ConverToRoman_Parameter90_ReturnC()
+        {
+            var conversor = new RomanNumbersConversos();
+            var romanNumber = conversor.Convert(90);
+            Assert.AreEqual("XC", romanNumber);
+        }
+
+        [TestMethod]
+        public void ConverToRoman_Parameter100_ReturnC()
+        {
+            var conversor = new RomanNumbersConversos();
+            var romanNumber = conversor.Convert(100);
+            Assert.AreEqual("C", romanNumber);
         }
     }
 }
